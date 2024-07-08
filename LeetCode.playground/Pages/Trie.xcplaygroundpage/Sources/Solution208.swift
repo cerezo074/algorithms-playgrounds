@@ -53,6 +53,65 @@ private class Trie {
 
         return true
     }
+    
+    func delete(word: String) -> Bool {
+        guard words.contains(word) else {
+            return false
+        }
+        
+        var currentNode = rootNode
+        
+        for character in word {
+            if let node = currentNode.children[character] {
+                currentNode = node
+            } else {
+                return false
+            }
+        }
+        
+        guard currentNode.isNodeUsedAsEnd else {
+            return false
+        }
+        
+        currentNode.isNodeUsedAsEnd = false
+        
+        while currentNode.isLastNode {
+            if let parent = currentNode.parent,
+                let currentValue = currentNode.value {
+                parent.children.removeValue(forKey: currentValue)
+                currentNode = parent
+            } else {
+                break
+            }
+        }
+        
+        words.remove(word)
+        
+        return true
+    }
+    
+    func printAll() {
+        print("Words: \(words)\nTrie:")
+        printNodes(node: rootNode, lenght: 0)
+    }
+    
+    private func printNodes(node: TrieNode, lenght: Int)  {
+        if let value = node.value {
+            var output = "\(String(repeating: "  ", count: lenght))\(lenght).\(value)"
+            
+            if node.isNodeUsedAsEnd {
+                output += "        isNodeUsedAsEnd"
+            }
+            
+            print(output)
+        } else {
+            print("Root Node")
+        }
+        
+        for child in node.children {
+            printNodes(node: child.value, lenght: (lenght + 1))
+        }
+    }
 }
 
 private class TrieNode {
@@ -89,6 +148,24 @@ public class Solution208 {
         print(trie.startsWith("app")) // return True
         trie.insert("app")
         print(trie.search("app"))
+    }
+    
+    public static func runDelete() {
+        let trie = Trie()
+        trie.insert("cama")
+        trie.insert("camaroncito")
+        trie.insert("camarote")
+        trie.insert("camabaja")
+        print("\n ---- Print initial Trie ----\n")
+        trie.printAll()
+        print("\n ---- Delete 'camaro', result: \(trie.delete(word: "camaro")) ----\n")
+        trie.printAll()
+        print("\n ---- Delete 'camaroncito', result: \(trie.delete(word: "camaroncito")) ----\n")
+        trie.printAll()
+        print("\n ---- Delete 'cama', result: \(trie.delete(word: "cama")) ----")
+        trie.printAll()
+        print("\n ---- Delete 'camarote', result: \(trie.delete(word: "camarote")) ----\n")
+        trie.printAll()
     }
 }
 

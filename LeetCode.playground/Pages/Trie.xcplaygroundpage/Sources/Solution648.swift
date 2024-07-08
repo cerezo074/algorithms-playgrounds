@@ -152,7 +152,7 @@ func cleanDuplicatedRoots(on dictionary: [String]) -> Set<String> {
     var outterIndex = 0
 
         while(outterIndex < dictionary.count) {
-            var word = dictionary[outterIndex]
+            let word = dictionary[outterIndex]
             dictionarySet.insert(word)
 
             if wordsToRemove.contains(word) {
@@ -163,7 +163,7 @@ func cleanDuplicatedRoots(on dictionary: [String]) -> Set<String> {
             var innerIndex = outterIndex + 1
 
             while (innerIndex < dictionary.count) {
-                var nextWord = dictionary[innerIndex]
+                let nextWord = dictionary[innerIndex]
 
                 if wordsToRemove.contains(nextWord) {
                     innerIndex += 1

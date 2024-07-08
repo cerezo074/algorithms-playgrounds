@@ -6,18 +6,19 @@ import Foundation
 // URL: //https://leetcode.com/problems/implement-trie-prefix-tree/
 
 //Solution208.run()
+Solution208.runDelete()
 
 //: ![Problem description](648.Replace_Words.png)
 // URL: //https://leetcode.com/problems/replace-words/
 
-print(Solution648.replaceWords(
-    ["cat","bat","rat"],
-    "the cattle was rattled by the battery"
-))
-
-print(Solution648.replaceWords(
-    ["a","b","c"],
-    "aadsfasf absbs bbab cadsfafs"
-))
+//print(Solution648.replaceWords(
+//    ["cat","bat","rat"],
+//    "the cattle was rattled by the battery"
+//))
+//
+//print(Solution648.replaceWords(
+//    ["a","b","c"],
+//    "aadsfasf absbs bbab cadsfafs"
+//))
 
 //: [Next](@next)
