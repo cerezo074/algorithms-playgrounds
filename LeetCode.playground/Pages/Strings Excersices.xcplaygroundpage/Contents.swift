@@ -60,8 +60,46 @@ import Foundation
 //: ![Problem description](2716.Minimize_String_Length.png)
 // URL: https://leetcode.com/problems/minimize-string-length/description/
 
-Solution2716.minimizedStringLength("aaabc") //3
-Solution2716.minimizedStringLength("cbbd") //3
-Solution2716.minimizedStringLength("dddaaa") //2
+//Solution2716.minimizedStringLength("aaabc") //3
+//Solution2716.minimizedStringLength("cbbd") //3
+//Solution2716.minimizedStringLength("dddaaa") //2
 
+
+/**
+ 
+ 
+ We receive a raw log per user ip Address
+ input:
+
+ """
+ 2014-12-24 04:00:13 192.0.0.1 home/user GET 200
+ 2014-12-24 05:00:13 192.0.0.2 home/user POST 400
+ 2014-12-24 06:00:13 192.0.0.1 home/user DELETE 200
+ 2014-12-24 07:00:13 192.0.0.3 home/deals PATCH 200
+ 2014-12-24 09:00:13 192.0.0.1 home/user HEAD 200
+ """
+ 
+ We have to return it as you see below.
+ 
+ output:
+
+ """
+ Resource: home/deals
+     192.0.0.3 - (PATCH, 200) - 2014-12-24 07:00:13
+ Resource: home/user
+     192.0.0.2 - (POST, 400) - 2014-12-24 05:00:13
+     192.0.0.1 - (GET, 200) (DELETE, 200) (HEAD, 200) - 2014-12-24 04:00:13 - 2014-12-24 09:00:13
+ """
+ 
+ */
+
+let input = """
+2014-12-24 04:00:13 192.0.0.1 home/user GET 200
+2014-12-24 05:00:13 192.0.0.2 home/user POST 400
+2014-12-24 06:00:13 192.0.0.1 home/user DELETE 200
+2014-12-24 07:00:13 192.0.0.3 home/deals PATCH 200
+2014-12-24 09:00:13 192.0.0.1 home/user HEAD 200
+"""
+
+print(parse(rawLogs: input))
 //: [Next](@next)
