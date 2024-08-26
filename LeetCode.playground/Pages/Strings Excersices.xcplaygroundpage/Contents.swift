@@ -64,6 +64,18 @@ import Foundation
 //Solution2716.minimizedStringLength("cbbd") //3
 //Solution2716.minimizedStringLength("dddaaa") //2
 
+//: ![Problem description](1170.Compare_Strings_by_Frequency_of_the_Smallest_Character.png)
+// URL: https://leetcode.com/problems/compare-strings-by-frequency-of-the-smallest-character/description/
+
+Solution1170.numSmallerByFrequency(
+    ["bba","abaaaaaa","aaaaaa","bbabbabaab","aba","aa","baab","bbbbbb","aab","bbabbaabb"],
+    ["aaabbb","aab","babbab","babbbb","b","bbbbbbbbab","a","bbbbbbbbbb","baaabbaab","aa"]
+) // [6,1,1,2,3,3,3,1,3,2]
+
+Solution1170.numSmallerByFrequency(
+    ["bbb","cc"],
+    ["a","aa","aaa","aaaa"]
+) // [1,2]
 
 /**
  
@@ -93,13 +105,14 @@ import Foundation
  
  */
 
-let input = """
-2014-12-24 04:00:13 192.0.0.1 home/user GET 200
-2014-12-24 05:00:13 192.0.0.2 home/user POST 400
-2014-12-24 06:00:13 192.0.0.1 home/user DELETE 200
-2014-12-24 07:00:13 192.0.0.3 home/deals PATCH 200
-2014-12-24 09:00:13 192.0.0.1 home/user HEAD 200
-"""
+//let input = """
+//2014-12-24 04:00:13 192.0.0.1 home/user GET 200
+//2014-12-24 05:00:13 192.0.0.2 home/user POST 400
+//2014-12-24 06:00:13 192.0.0.1 home/user DELETE 200
+//2014-12-24 07:00:13 192.0.0.3 home/deals PATCH 200
+//2014-12-24 09:00:13 192.0.0.1 home/user HEAD 200
+//"""
+//
+//print(parse(rawLogs: input))
 
-print(parse(rawLogs: input))
 //: [Next](@next)
