@@ -16,10 +16,7 @@ import Foundation
 //print(Solution733.floodFill([[0,0,0],[0,0,0]], 0, 0, 0)) // [[0,0,0],[0,0,0]]
 
 //: ![Problem description](912.Sort_an_Array.png)
-// URL: https://leetcode.com/problems/sort-an-array/description/?envType=problem-list-v2&envId=merge-sort
-
-//print(Solution733.floodFill([[1,1,1],[1,1,0],[1,0,1]], 1, 1, 2)) // [[2,2,2],[2,2,0],[2,0,1]]
-//print(Solution733.floodFill([[0,0,0],[0,0,0]], 0, 0, 0)) // [[0,0,0],[0,0,0]]
+// URL: https://leetcode.com/problems/sort-an-array
 
 print(Solution912.sort(list: [5,2,3,1])) // [1,2,3,5]
 print(Solution912.sort(list: [5,1,1,2,0,0])) // [0,0,1,1,2,5]
